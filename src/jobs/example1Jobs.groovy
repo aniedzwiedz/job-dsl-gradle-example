@@ -13,9 +13,10 @@ job("$basePath/gradle-example-build") {
         scm 'H/5 * * * *'
     }
     steps {
-        gradle 'check'
         gradle 'model'
+        boolean makeExecutable = true
     }
+
 }
 
 job("$basePath/gradle-example-deploy") {
