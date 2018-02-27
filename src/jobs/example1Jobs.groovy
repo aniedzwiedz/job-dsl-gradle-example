@@ -6,7 +6,6 @@ folder(basePath) {
 }
 
 job("$basePath/gradle-example-build") {
-
     scm {
         github repo
     }
@@ -14,8 +13,10 @@ job("$basePath/gradle-example-build") {
         scm 'H/5 * * * *'
     }
     steps {
-        gradle 'model'
-        it / makeExecutable(true)
+        gradle {
+            tasks ('model')
+            makeExecutable(true)
+        }
     }
 
 }
