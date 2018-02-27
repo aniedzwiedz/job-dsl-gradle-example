@@ -7,10 +7,10 @@ folder(basePath) {
 
 job("$basePath/gradle-example-build") {
     scm {
-        github repo
+        github(repo)
     }
     triggers {
-        scm 'H/5 * * * *'
+        scm {cron('H/5 * * * *')}
     }
     steps {
         gradle {
