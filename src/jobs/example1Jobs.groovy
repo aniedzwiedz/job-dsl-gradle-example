@@ -12,9 +12,8 @@ job("$basePath/gradle-example-build") {
     triggers {
         scm 'H/5 * * * *'
     }
-    makeExecutable true
-
     steps {
+        gradle 'check'
         gradle 'model'
     }
 }
