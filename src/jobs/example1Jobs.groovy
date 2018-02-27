@@ -15,7 +15,7 @@ job("$basePath/gradle-example-build") {
     }
     steps {
         gradle 'model'
-        makeExecutable (true)
+        it / makeExecutable(true)
     }
 
 }
